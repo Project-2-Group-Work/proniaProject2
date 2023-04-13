@@ -1,0 +1,60 @@
+{
+  "inventory": [
+    {
+      "image": "assets/p2.jpeg",
+      "name": "American Marigold",
+      "icon": "assets/icons8-shopping-cart-64.png",
+      "wishlist": "assets/heart-icon.png",
+      "price": "$23.45"
+    },
+    {
+      "image": "assets/p1.jpeg",
+      "name": "Black Eyed Susan",
+      "icon": "assets/icons8-shopping-cart-64.png",
+      "wishlist": "assets/heart-icon.png",
+      "price": "$25.45"
+    },
+    {
+      "image": "assets/p3.jpeg",
+      "name": "Bleeding Heart",
+      "icon": "/assets/icons8-shopping-cart-64.png",
+      "wishlist": "assets/heart-icon.png",
+      "price": "$30.45"
+    },
+    {
+      "image": "assets/p4.jpeg",
+      "name": "Bloody Cranesbill",
+      "icon": "assets/icons8-shopping-cart-64.png",
+      "wishlist": "assets/heart-icon.png",
+      "price": "$45.00"
+    },
+    {
+      "image": "assets/p5.jpeg",
+      "name": "Butterfly Weed",
+      "icon": "assets/icons8-shopping-cart-64.png",
+      "wishlist": "assets/heart-icon.png",
+      "price": "$50.45"
+    },
+    {
+      "image": "assets/p6.jpeg",
+      "name": "Common Yarrow",
+      "icon": "assets/icons8-shopping-cart-64.png",
+      "wishlist": "assets/heart-icon.png",
+      "price": "$65.00"
+    },
+    {
+      "image": "assets/p7.jpeg",
+      "name": "Doublefile Vibranium",
+      "icon": "assets/icons8-shopping-cart-64.png",
+      "wishlist": "assets/heart-icon.png",
+      "price": "$67.45"
+    },
+    {
+      "image": "assets/p8.jpeg",
+      "name": "Feather Reed Grass",
+      "icon": "assets/icons8-shopping-cart-64.png",
+      "wishlist": "assets/heart-icon.png",
+      "price": "$20.45"
+    }
+  ]
+}

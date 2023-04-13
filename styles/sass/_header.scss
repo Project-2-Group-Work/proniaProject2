@@ -1,0 +1,145 @@
+.top-bar {
+  background-color: #abd373;
+  font-family: "Rubik", sans-serif;
+  font-weight: normal;
+  color: #fff;
+  text-transform: capitalize;
+  padding: 10px;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    div {
+      display: flex;
+      p {
+        margin: 0px 10px;
+      }
+    }
+  }
+}
+.navigation {
+  padding: 25px 0px;
+  .wrapper {
+    .navigation-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      nav {
+        padding: 10px 0px;
+        ul {
+          list-style: none;
+          display: flex;
+        }
+        a {
+          text-decoration: none;
+          color: black;
+          margin: 0px 10px;
+        }
+      }
+      .pronia-logo {
+        width: 71px;
+        height: 33px;
+
+        .cart-icon {
+          height: 40px;
+          width: 40px;
+        }
+      }
+    }
+  }
+}
+.navigation {
+  .wrapper {
+    .navigation-bar {
+      .cart-icon {
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+}
+
+.banner {
+  background-color: #f6e4d1;
+  .wrapper {
+    display: flex;
+    .text-container .image-container {
+      width: 50%;
+    }
+  }
+}
+
+.banner {
+  .wrapper {
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p {
+        margin-bottom: 10px 0px;
+      }
+      .subheading-banner {
+        font-size: 2rem;
+        font-weight: 300;
+        text-align: left;
+        margin: 10px 0px;
+      }
+    }
+  }
+}
+
+.banner {
+  .wrapper {
+    .flower-pot {
+      height: 400px;
+      width: 400px;
+      padding: 40px 0px;
+    }
+    button {
+      max-width: fit-content;
+    }
+  }
+}
+
+.contact-banner {
+  background-image: url(../pronia-project/assets/contact-header.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: auto;
+  height: 200px;
+}
+
+.contact-container {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 375px) {
+  .top-bar .wrapper div {
+    display: inline;
+  }
+  .navigation .wrapper .navigation-bar .pronia-logo {
+    width: auto;
+    height: 24px;
+    margin-bottom: 11px;
+  }
+  .banner .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .banner .text-container {
+    margin: 10px 0px;
+  }
+  .banner .wrapper .text-container .subheading-banner {
+    text-align: center;
+  }
+}

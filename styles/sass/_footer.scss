@@ -1,0 +1,91 @@
+footer {
+  background-image: url(../pronia-project/assets/footer.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+footer {
+  p {
+    font-size: smaller;
+  }
+}
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 80px 20px 10px 20px;
+}
+
+.footer-container {
+  .title {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+}
+.footer-container {
+  p {
+    line-height: 20px;
+  }
+}
+.section-1 {
+  img {
+    width: auto;
+    height: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 0px;
+  }
+}
+.section-5 {
+  .title {
+    margin-bottom: 5px;
+    .number {
+      font-size: 18px;
+    }
+  }
+}
+.section-5 {
+  .number {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+}
+.social-media-container {
+  padding: 0px 15px;
+  display: flex;
+  max-width: fit-content;
+}
+.facebook,
+.twitter,
+.pintrest,
+.dribble {
+  border: 1px solid #000000;
+  margin: 0px 5px;
+  padding: 5px 10px;
+}
+.copy-right {
+  p {
+    text-align: center;
+    padding: 0px 15px 15px 15px;
+    font-size: 14px;
+    color: #abd373;
+  }
+}
+hr {
+  margin: 40px auto 20px auto;
+  width: 850px;
+  color: #abd373;
+}
+@media (max-width: 834px) {
+  hr {
+    width: 613px;
+  }
+}
+@media (max-width: 375px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 30px 20px 10px 20px;
+  }
+  hr {
+    width: 270px;
+  }
+}

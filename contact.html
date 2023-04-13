@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="top-bar">
+        <div class="wrapper">
+          <p>Hello everyone! 25% off all products</p>
+          <div>
+            <p>CAD</p>
+            <p>English</p>
+          </div>
+        </div>
+      </div>
+      <div class="navigation">
+        <div class="wrapper">
+          <div class="navigation-bar">
+            <img
+              class="pronia-logo"
+              src="./pronia-project/assets/logo.png"
+              alt="Pronia Logo"
+            />
+            <nav>
+              <ul>
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="./contact.html">CONTACT US</a></li>
+              </ul>
+            </nav>
+            <img
+              class="cart-icon"
+              src="pronia-project/assets/icons/shopping-bag.svg"
+              alt="shopping cart button"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="contact-banner">
+        <div class="wrapper">
+          <div class="contact-container">
+            <h2>CONTACT</h2>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="contact-main">
+        <div class="wrapper">
+          <div class="contact-info-container">
+            <p class="title">Contact Info:</p>
+            <p class="caption">
+              Fill the form and our team will get back to you in 24 hours
+            </p>
+            <p class="number">123 456 798</p>
+            <p class="email">info@example.com</p>
+            <p class="address">13 Your Address Here</p>
+          </div>
+          <div class="form">
+            <div class="contact-information-form">
+              <form action="" method="post" id="contactForm">
+                <div class="item1">
+                  <input
+                    type="text"
+                    placeholder="First Name*"
+                    name="first_name"
+                    id="first_name"
+                  />
+                  <div class="error_message"></div>
+                </div>
+                <div class="item2">
+                  <input
+                    type="text"
+                    placeholder="Last Name*"
+                    name="last_name"
+                    id="last_name"
+                  />
+                  <div class="error_message"></div>
+                </div>
+                <div class="item3">
+                  <input
+                    type="tel"
+                    placeholder="Phone*"
+                    name="phone_number"
+                    id="phone_number"
+                  />
+                  <div class="error_message"></div>
+                </div>
+                <div class="item4">
+                  <input
+                    type="email"
+                    placeholder="Email*"
+                    name="email_address"
+                    id="email_address"
+                  />
+                  <div class="error_message"></div>
+                </div>
+                <div class="item5">
+                  <textarea
+                    rows="5"
+                    cols="60"
+                    type="text"
+                    placeholder="Message"
+                    name="user_message"
+                    id="user_message"
+                  >
+                  </textarea>
+
+                  <div class="error_message"></div>
+                </div>
+                <div class="form-button">
+                  <button type="submit">POST COMMENT</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="wrapper">
+        <div class="footer-container">
+          <div class="section-1">
+            <img src="pronia-project/assets/logo.png" alt="company logo" />
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque
+              odio cupiditate reprehenderit.
+            </p>
+          </div>
+          <div class="section-2">
+            <p class="title">Useful Links</p>
+            <p>About Pronia</p>
+            <p>How to Shop</p>
+            <p>FAQ</p>
+            <p>Contact Us</p>
+            <p>Log in</p>
+          </div>
+          <div class="section-3">
+            <p class="title">My Account</p>
+            <p>Sign In</p>
+            <p>View Cart</p>
+            <p>My Wishlist</p>
+            <p>Track My Order</p>
+            <p>Help</p>
+          </div>
+          <div class="section-4">
+            <p class="title">Our Service</p>
+            <p>Payment Methods</p>
+            <p>Money Guarantee!</p>
+            <p>Returns</p>
+            <p>Shipping</p>
+            <p>Privacy Policy</p>
+          </div>
+          <div class="section-5">
+            <p class="title">Got Questions? Call Us</p>
+            <p class="number">123456789</p>
+            <p>Your Address Goes Here</p>
+          </div>
+        </div>
+        <div class="social-media-container">
+          <div class="facebook">
+            <i class="fa fa-facebook-f"></i>
+          </div>
+          <div class="twitter">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </div>
+          <div class="pintrest">
+            <i class="fa fa-pinterest-square" aria-hidden="true"></i>
+          </div>
+          <div class="dribble">
+            <i class="fa fa-dribbble" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="copy-right">
+        <p>© 2023 Pronia</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
