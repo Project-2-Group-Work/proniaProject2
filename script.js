@@ -13,6 +13,29 @@ const addToDatabase = (key, value) => {
   set(customRef, value);
 };
 
+// Display the number of items currently added to the user's cart. 
+
+// Select the add to cart buttons on the page, specifically the image section 
+const addToCartButton = document.querySelectorAll(`.add-to-cart- img`);
+
+//create a ref to the cartCount in the database 
+
+const cartCountRef = ref (database,'cartCount')
+
+cartCountRef.on("value", (snapshot) => {
+  const cartCount = snapshot.val();
+  //Update the cart count display here
+});
+
+//add an event listener to the add to cart buttons so that when the browser hears a click 
+
+addToCartButton.forEach(function(button){ 
+  button.addEventListener(`click`, function (e) {
+    
+
+
+  });
+});
 
 
 
