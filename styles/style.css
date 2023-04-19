@@ -354,7 +354,7 @@ img {
 }
 .navigation .wrapper .navigation-bar nav a {
   text-decoration: none;
-  color: black;
+  color: rgb(0, 0, 0);
   margin: 0px 10px;
 }
 .navigation .wrapper .navigation-bar .pronia-logo {
@@ -369,6 +369,19 @@ img {
 .navigation .wrapper .navigation-bar .cart-icon {
   height: 20px;
   width: 20px;
+}
+
+.navigation a {
+  text-decoration: none;
+}
+.navigation .cart-counter {
+  border: solid 2px #abd373;
+  background-color: #abd373;
+  top: 50px;
+  right: 110px;
+  padding: 5px 7px;
+  border-radius: 50%;
+  color: white;
 }
 
 .banner {
@@ -598,29 +611,44 @@ img {
   color: black;
 }
 
-.product-items .card img {
+#product-items-container img {
   height: 200px;
   width: auto;
 }
 
-.product-items .card .add-to-cart- img {
+.add-to-cart- {
+  background-color: #f6f7fb;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 0%;
+  cursor: pointer;
+}
+
+.add-to-cart-:hover {
+  background-color: #d8d8d8;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#product-items-container .add-to-cart- img {
   height: 30px;
   width: auto;
   padding: 5px;
   -webkit-box-shadow: 0px 2px 7px #4c4c4c;
           box-shadow: 0px 2px 7px #4c4c4c;
 }
-.product-items .card p {
+
+p {
   margin: 10px 0px;
   font-size: medium;
 }
 
-.container-text {
+.prices {
   color: #abd373;
   font-size: medium;
 }
 
-.product-items {
+#product-items-container {
   display: grid;
   margin-top: 60px;
   gap: 1.5rem;
@@ -897,10 +925,10 @@ button {
   width: max-content;
 }
 
-.item1 input,
-.item2 input,
-.item3 input,
-.item4 input {
+#plant1 input,
+#plant2 input,
+#plant3 input,
+#plant4 input {
   width: 100%;
   padding: 12px 4px;
   margin: 8px 0;
