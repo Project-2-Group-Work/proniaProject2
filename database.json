@@ -1,6 +1,6 @@
 {
   "inventory": {
-    "plant1" : {
+    "plant1": {
       "image": "pronia-project/assets/p2.jpeg",
       "alt": "small plant with small leaves in brown bowl",
       "name": "American Marigold",
@@ -10,7 +10,7 @@
       "price": "$23.45",
       "tag": "Featured"
     },
-    "plant2" : {
+    "plant2": {
       "image": "pronia-project/assets/p1.jpeg",
       "alt": "small plant with medium leaves in black bowl",
       "name": "Black Eyed Susan",
@@ -20,7 +20,7 @@
       "price": "$25.45",
       "tag": "Bestseller"
     },
-    "plant3" : {
+    "plant3": {
       "image": "pronia-project/assets/p3.jpeg",
       "alt": "green and white cactus in white bowl",
       "name": "Bleeding Heart",
@@ -30,7 +30,7 @@
       "price": "$30.45",
       "tag": "Featured"
     },
-    "plant4" : {
+    "plant4": {
       "image": "pronia-project/assets/p4.jpeg",
       "alt": "small plant with medium leaves in white bowl",
       "name": "Bloody Cranesbill",
@@ -40,7 +40,7 @@
       "price": "$45.00",
       "tag": "Bestseller"
     },
-    "plant5" : {
+    "plant5": {
       "image": "pronia-project/assets/p5.jpeg",
       "alt": "small plant with long thin leaves in white bowl",
       "name": "Butterfly Weed",
@@ -50,7 +50,7 @@
       "price": "$50.45",
       "tag": "Featured"
     },
-    "plant6" : {
+    "plant6": {
       "image": "pronia-project/assets/p6.jpeg",
       "alt": "medium plant with big thin leaves in white bowl",
       "name": "Common Yarrow",
@@ -60,7 +60,7 @@
       "price": "$65.00",
       "tag": "Latest"
     },
-    "plant7" : {
+    "plant7": {
       "image": "pronia-project/assets/p7.jpeg",
       "alt": "medium plant with big leaves in white bowl",
       "name": "Doublefile Vibranium",
@@ -70,7 +70,7 @@
       "price": "$67.45",
       "tag": "Bestseller"
     },
-    "plant8" : {
+    "plant8": {
       "image": "pronia-project/assets/p8.jpeg",
       "alt": "green and yellow cactus in gold bowl",
       "name": "Feather Reed Grass",

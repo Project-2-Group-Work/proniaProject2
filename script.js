@@ -1,22 +1,25 @@
-// 
+//
 import app from "./firebaseConfig.js";
 import {
   getDatabase,
   ref,
   set,
   push,
-  onValue
+  onValue,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
-// the reference to the database app 
+// the reference to the database app
 const database = getDatabase(app);
-// reference to the products in our database 
-const productRef = ref(database, '/inventory');
+// reference to the products in our database
+const productRef = ref(database, "/inventory");
 
-// displaying our product data on the page emitted from firebase on the page 
-onValue(productRef, (data)=> {
-  // use onValue method to listen for changes, grabbing the data and getting a snapshot of the data 
-  const productData =data.val();
+// global variables
+const productDivContainer = document.querySelector("#product-items-container");
+
+// displaying our product data on the page emitted from firebase on the page
+onValue(productRef, (data) => {
+  // use onValue method to listen for changes, grabbing the data and getting a snapshot of the data
+  const productData = data.val();
 
   for (let key in productData) {
     console.log(productData[key]);
@@ -48,6 +51,7 @@ onValue(productRef, (data)=> {
     buttonItem.className = "add-to-cart-";
 
     const buttonImg = document.createElement("img");
+    buttonImg.className = "shopping-cart-button-img";
     buttonImg.src = buttonImgUrl;
     buttonImg.alt = buttonImgAlt;
 
@@ -61,101 +65,167 @@ onValue(productRef, (data)=> {
     buttonItem.append(buttonImg);
     //appending our div item to the div item with an id of product-items-container
     document.querySelector("#product-items-container").append(divItem);
-  
   }
-}) 
-
-
-
-
-
-
-
-
-
-
-
-// const addToDatabase = (key, value) => {
-//   const customRef = ref(database, key);
-//   set(customRef, value);
-// };
-
-// // Display the number of items currently added to the user's cart. 
-
-// // Select the add to cart buttons on the page, specifically the image section 
-// const addToCartButton = document.querySelectorAll(`.add-to-cart- img`);
-
-// //create a ref to the cartCount in the database 
-
-// const cartCountRef = ref (database,'cartCount')
-
-// cartCountRef.on("value", (snapshot) => {
-//   const cartCount = snapshot.val();
-//   //Update the cart count display here
-
-
-  
-// });
-
-// //add an event listener to the add to cart buttons so that when the browser hears a click 
-
-// addToCartButton.forEach(function(button){ 
-//   button.addEventListener(`click`, function (e) {
-    
-
-
-//   });
-// });
-
-
-
-// Select the form elemet on the page and allow the browser to listen for an event (submit) then perform the following activities
-// Error Handling: Make sure the user has filled in all the fields before they are allowed to submit
-// If they click submit without filling all the fiels show an error message
-//Prevent the forms defualt of refreshing when the submit button is clicked/submitted
-// Save the inputs as variabes (inputs being what they write in the field)
-//** When the user submits, output a message on the form that confirms their submission and the button should change and allow them to submit another set of information "post again"
-
-const form = document.querySelector(`form`);
-const firstName = document.querySelector(`#first_name`);
-//const lastName = document.querySelector(`#last_name`);
-//const phoneNumber = document.querySelector(`#phone_number`);
-//const email = document.querySelector(`#email_address`);
-//const userMessage = document.querySelector(`#user_message`);
-
-form.addEventListener(`submit`, function (e) {
-  e.preventDefault();
-  formValidation();
 });
 
-const setError = function (element, message) {
-  const item1 = element.parentElement;
-  const errorDisplay = item1.querySelector(`.error_message`);
-  errorDisplay.innerHTML = message;
-
-  item1.classList.add(`error_message`);
-  item1.classList.remove(`sucess_message`);
-};
-
-const setSucess = function (element) {
-  const item1 = element.parentElement;
-  const errorDisplay = item1.querySelector(`.error_message`);
-  errorDisplay.innerHTML = ``;
-
-  item1.classList.add(`sucess_message`);
-  item1.classList.remove(`error_message`);
-};
-
-const formValidation = function () {
-  const firstNameValue = firstName.value.trim();
-  //const lastNameValue = lastName.value.trim();
-  //const phoneNumberValue = phoneNumber.value.trim();
-  //const emailValue = phoneNumber.value.trim();
-  // const userMessageValue = userMessage.value.tirm();
-
-  if (firstNameValue === ``) {
-    setError(firstName, `space cannot be blank`);
-  } else {
-    setSucess(firstName);
+// code for adding items to the cart
+// event listener for the div container containing the products which contains the buttons (* global variable used here)
+productDivContainer.addEventListener("click", (event) => {
+  if (event.target.className === "shopping-cart-button-img");
+  {
+    //select the id of each item 
+    addToCart(event.target.parentElement.parentElement.id);
   }
+});
+
+// this function handles adding items to our cart section it will be called when the user clicks on the add to cart button
+// on click, grab the info from the item, create a new object and push that to a location in firebase and increase item count in innerHTML
+const addToCart = (selectedProduct) => {
+  console.log(selectedProduct);
+  //create a reference to the specific product in the database
 };
+
+//create a ref to the cartCount in the database
+
+const cartCountRef = ref(database, "/cartCount");
+
+// making the json into an array in order to be able to filter
+
+const inventory = {
+  inventory: {
+    plant1: {
+      image: "pronia-project/assets/p2.jpeg",
+      alt: "small plant with small leaves in brown bowl",
+      name: "American Marigold",
+      iconAlt: "add to cart button",
+      icon: "pronia-project/assets/icons8-shopping-cart-64.png",
+      wishlist: "pronia-project/assets/heart-icon.png",
+      price: "$23.45",
+      tag: "Featured",
+    },
+    plant2: {
+      image: "pronia-project/assets/p1.jpeg",
+      alt: "small plant with medium leaves in black bowl",
+      name: "Black Eyed Susan",
+      iconAlt: "add to cart button",
+      icon: "pronia-project/assets/icons8-shopping-cart-64.png",
+      wishlist: "pronia-project/assets/heart-icon.png",
+      price: "$25.45",
+      tag: "Bestseller",
+    },
+    plant3: {
+      image: "pronia-project/assets/p3.jpeg",
+      alt: "green and white cactus in white bowl",
+      name: "Bleeding Heart",
+      iconAlt: "add to cart button",
+      icon: "pronia-project/assets/icons8-shopping-cart-64.png",
+      wishlist: "pronia-project/assets/heart-icon.png",
+      price: "$30.45",
+      tag: "Featured",
+    },
+    plant4: {
+      image: "pronia-project/assets/p4.jpeg",
+      alt: "small plant with medium leaves in white bowl",
+      name: "Bloody Cranesbill",
+      iconAlt: "add to cart button",
+      icon: "pronia-project/assets/icons8-shopping-cart-64.png",
+      wishlist: "pronia-project/assets/heart-icon.png",
+      price: "$45.00",
+      tag: "Bestseller",
+    },
+    plant5: {
+      image: "pronia-project/assets/p5.jpeg",
+      alt: "small plant with long thin leaves in white bowl",
+      name: "Butterfly Weed",
+      iconAlt: "add to cart button",
+      icon: "pronia-project/assets/icons8-shopping-cart-64.png",
+      wishlist: "pronia-project/assets/heart-icon.png",
+      price: "$50.45",
+      tag: "Featured",
+    },
+    plant6: {
+      image: "pronia-project/assets/p6.jpeg",
+      alt: "medium plant with big thin leaves in white bowl",
+      name: "Common Yarrow",
+      iconAlt: "add to cart button",
+      icon: "pronia-project/assets/icons8-shopping-cart-64.png",
+      wishlist: "pronia-project/assets/heart-icon.png",
+      price: "$65.00",
+      tag: "Latest",
+    },
+    plant7: {
+      image: "pronia-project/assets/p7.jpeg",
+      alt: "medium plant with big leaves in white bowl",
+      name: "Doublefile Vibranium",
+      iconAlt: "add to cart button",
+      icon: "pronia-project/assets/icons8-shopping-cart-64.png",
+      wishlist: "pronia-project/assets/heart-icon.png",
+      price: "$67.45",
+      tag: "Bestseller",
+    },
+    plant8: {
+      image: "pronia-project/assets/p8.jpeg",
+      alt: "green and yellow cactus in gold bowl",
+      name: "Feather Reed Grass",
+      iconAlt: "add to cart button",
+      icon: "pronia-project/assets/icons8-shopping-cart-64.png",
+      wishlist: "pronia-project/assets/heart-icon.png",
+      price: "$20.45",
+      tag: "Latest",
+    },
+  },
+};
+
+const inventoryArray = Object.entries(inventory.inventory);
+//console.log(inventoryArray);
+
+// // Select the form elemet on the page and allow the browser to listen for an event (submit) then perform the following activities
+// // Error Handling: Make sure the user has filled in all the fields before they are allowed to submit
+// // If they click submit without filling all the fiels show an error message
+// //Prevent the forms defualt of refreshing when the submit button is clicked/submitted
+// // Save the inputs as variabes (inputs being what they write in the field)
+// //** When the user submits, output a message on the form that confirms their submission and the button should change and allow them to submit another set of information "post again"
+
+// const form = document.querySelector(`form`);
+// const firstName = document.querySelector(`#first_name`);
+// //const lastName = document.querySelector(`#last_name`);
+// //const phoneNumber = document.querySelector(`#phone_number`);
+// //const email = document.querySelector(`#email_address`);
+// //const userMessage = document.querySelector(`#user_message`);
+
+// form.addEventListener(`submit`, function (e) {
+//   e.preventDefault();
+//   formValidation();
+// });
+
+// const setError = function (element, message) {
+//   const item1 = element.parentElement;
+//   const errorDisplay = item1.querySelector(`.error_message`);
+//   errorDisplay.innerHTML = message;
+
+//   item1.classList.add(`error_message`);
+//   item1.classList.remove(`sucess_message`);
+// };
+
+// const setSucess = function (element) {
+//   const item1 = element.parentElement;
+//   const errorDisplay = item1.querySelector(`.error_message`);
+//   errorDisplay.innerHTML = ``;
+
+//   item1.classList.add(`sucess_message`);
+//   item1.classList.remove(`error_message`);
+// };
+
+// const formValidation = function () {
+//   const firstNameValue = firstName.value.trim();
+//   //const lastNameValue = lastName.value.trim();
+//   //const phoneNumberValue = phoneNumber.value.trim();
+//   //const emailValue = phoneNumber.value.trim();
+//   // const userMessageValue = userMessage.value.tirm();
+
+//   if (firstNameValue === ``) {
+//     setError(firstName, `space cannot be blank`);
+//   } else {
+//     setSucess(firstName);
+//   }
+// };
