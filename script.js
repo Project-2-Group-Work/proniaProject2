@@ -29,12 +29,39 @@ onValue(productRef, (data)=> {
       <p class ="prices"></p>
     </div>
     */
-   // create variables to store some elements 
-   const productImgUrl = productData[key].image;
-   const productImgAlt = productData[key].alt;
-   const buttonImgUrl = productData[key].icon;
-   const buttonImgAlt = productData[key].iconAlt;
-   
+    // create variables to store some elements
+    const productImgUrl = productData[key].image;
+    const productImgAlt = productData[key].alt;
+    const buttonImgUrl = productData[key].icon;
+    const buttonImgAlt = productData[key].iconAlt;
+    const productName = productData[key].name;
+    const productPrice = productData[key].price;
+
+    // create new html elements
+    const divItem = document.createElement("div");
+    divItem.id = key;
+    const plantImg = document.createElement("img");
+    plantImg.src = productImgUrl;
+    plantImg.alt = productImgAlt;
+
+    const buttonItem = document.createElement("button");
+    buttonItem.className = "add-to-cart-";
+
+    const buttonImg = document.createElement("img");
+    buttonImg.src = buttonImgUrl;
+    buttonImg.alt = buttonImgAlt;
+
+    const paraTitleItem = document.createElement("p");
+    paraTitleItem.innerHTML = productName;
+    const paraSubTitleItem = document.createElement("p");
+    paraSubTitleItem.className = "prices";
+    paraSubTitleItem.innerHTML = productPrice;
+    //appending the plant image, paragraphs and add to cart button to oue divItem
+    divItem.append(plantImg, buttonItem, paraTitleItem, paraSubTitleItem);
+    buttonItem.append(buttonImg);
+    //appending our div item to the div item with an id of product-items-container
+    document.querySelector("#product-items-container").append(divItem);
+  
   }
 }) 
 
