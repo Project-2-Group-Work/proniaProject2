@@ -6,6 +6,7 @@ import {
   set,
   push,
   onValue,
+  get
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 // the reference to the database app
@@ -73,9 +74,15 @@ onValue(productRef, (data) => {
 productDivContainer.addEventListener("click", (event) => {
   if (event.target.className === "shopping-cart-button-img");
   {
+
+    //select the value of the cart count 
+      get(cartCountRef).then((snapshot) => {
+      console.log(snapshot.val());
+    })
     //select the id of each item 
-    addToCart(event.target.parentElement.parentElement.id);
+    //addToCart(event.target.parentElement.parentElement.id);
   }
+
 });
 
 // this function handles adding items to our cart section it will be called when the user clicks on the add to cart button
@@ -89,95 +96,6 @@ const addToCart = (selectedProduct) => {
 
 const cartCountRef = ref(database, "/cartCount");
 
-// making the json into an array in order to be able to filter
-
-const inventory = {
-  inventory: {
-    plant1: {
-      image: "pronia-project/assets/p2.jpeg",
-      alt: "small plant with small leaves in brown bowl",
-      name: "American Marigold",
-      iconAlt: "add to cart button",
-      icon: "pronia-project/assets/icons8-shopping-cart-64.png",
-      wishlist: "pronia-project/assets/heart-icon.png",
-      price: "$23.45",
-      tag: "Featured",
-    },
-    plant2: {
-      image: "pronia-project/assets/p1.jpeg",
-      alt: "small plant with medium leaves in black bowl",
-      name: "Black Eyed Susan",
-      iconAlt: "add to cart button",
-      icon: "pronia-project/assets/icons8-shopping-cart-64.png",
-      wishlist: "pronia-project/assets/heart-icon.png",
-      price: "$25.45",
-      tag: "Bestseller",
-    },
-    plant3: {
-      image: "pronia-project/assets/p3.jpeg",
-      alt: "green and white cactus in white bowl",
-      name: "Bleeding Heart",
-      iconAlt: "add to cart button",
-      icon: "pronia-project/assets/icons8-shopping-cart-64.png",
-      wishlist: "pronia-project/assets/heart-icon.png",
-      price: "$30.45",
-      tag: "Featured",
-    },
-    plant4: {
-      image: "pronia-project/assets/p4.jpeg",
-      alt: "small plant with medium leaves in white bowl",
-      name: "Bloody Cranesbill",
-      iconAlt: "add to cart button",
-      icon: "pronia-project/assets/icons8-shopping-cart-64.png",
-      wishlist: "pronia-project/assets/heart-icon.png",
-      price: "$45.00",
-      tag: "Bestseller",
-    },
-    plant5: {
-      image: "pronia-project/assets/p5.jpeg",
-      alt: "small plant with long thin leaves in white bowl",
-      name: "Butterfly Weed",
-      iconAlt: "add to cart button",
-      icon: "pronia-project/assets/icons8-shopping-cart-64.png",
-      wishlist: "pronia-project/assets/heart-icon.png",
-      price: "$50.45",
-      tag: "Featured",
-    },
-    plant6: {
-      image: "pronia-project/assets/p6.jpeg",
-      alt: "medium plant with big thin leaves in white bowl",
-      name: "Common Yarrow",
-      iconAlt: "add to cart button",
-      icon: "pronia-project/assets/icons8-shopping-cart-64.png",
-      wishlist: "pronia-project/assets/heart-icon.png",
-      price: "$65.00",
-      tag: "Latest",
-    },
-    plant7: {
-      image: "pronia-project/assets/p7.jpeg",
-      alt: "medium plant with big leaves in white bowl",
-      name: "Doublefile Vibranium",
-      iconAlt: "add to cart button",
-      icon: "pronia-project/assets/icons8-shopping-cart-64.png",
-      wishlist: "pronia-project/assets/heart-icon.png",
-      price: "$67.45",
-      tag: "Bestseller",
-    },
-    plant8: {
-      image: "pronia-project/assets/p8.jpeg",
-      alt: "green and yellow cactus in gold bowl",
-      name: "Feather Reed Grass",
-      iconAlt: "add to cart button",
-      icon: "pronia-project/assets/icons8-shopping-cart-64.png",
-      wishlist: "pronia-project/assets/heart-icon.png",
-      price: "$20.45",
-      tag: "Latest",
-    },
-  },
-};
-
-const inventoryArray = Object.entries(inventory.inventory);
-//console.log(inventoryArray);
 
 // // Select the form elemet on the page and allow the browser to listen for an event (submit) then perform the following activities
 // // Error Handling: Make sure the user has filled in all the fields before they are allowed to submit

@@ -925,10 +925,10 @@ button {
   width: max-content;
 }
 
-#plant1 input,
-#plant2 input,
-#plant3 input,
-#plant4 input {
+.item1 input,
+.item2 input,
+.item3 input,
+.item4 input {
   width: 100%;
   padding: 12px 4px;
   margin: 8px 0;
