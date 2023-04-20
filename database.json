@@ -8,7 +8,8 @@
       "icon": "pronia-project/assets/icons8-shopping-cart-64.png",
       "wishlist": "pronia-project/assets/heart-icon.png",
       "price": "$23.45",
-      "tag": "Featured"
+      "tag": "Featured",
+      "id": "plant1"
     },
     {
       "image": "pronia-project/assets/p1.jpeg",
@@ -18,7 +19,8 @@
       "icon": "pronia-project/assets/icons8-shopping-cart-64.png",
       "wishlist": "pronia-project/assets/heart-icon.png",
       "price": "$25.45",
-      "tag": "Bestseller"
+      "tag": "Bestseller",
+      "id": "plant2"
     },
     {
       "image": "pronia-project/assets/p3.jpeg",
@@ -28,7 +30,8 @@
       "icon": "pronia-project/assets/icons8-shopping-cart-64.png",
       "wishlist": "pronia-project/assets/heart-icon.png",
       "price": "$30.45",
-      "tag": "Featured"
+      "tag": "Featured",
+      "id": "plant3"
     },
     {
       "image": "pronia-project/assets/p4.jpeg",
@@ -38,7 +41,8 @@
       "icon": "pronia-project/assets/icons8-shopping-cart-64.png",
       "wishlist": "pronia-project/assets/heart-icon.png",
       "price": "$45.00",
-      "tag": "Bestseller"
+      "tag": "Bestseller",
+      "id": "plant4"
     },
     {
       "image": "pronia-project/assets/p5.jpeg",
@@ -48,7 +52,8 @@
       "icon": "pronia-project/assets/icons8-shopping-cart-64.png",
       "wishlist": "pronia-project/assets/heart-icon.png",
       "price": "$50.45",
-      "tag": "Featured"
+      "tag": "Featured",
+      "id": "plant5"
     },
     {
       "image": "pronia-project/assets/p6.jpeg",
@@ -58,7 +63,8 @@
       "icon": "pronia-project/assets/icons8-shopping-cart-64.png",
       "wishlist": "pronia-project/assets/heart-icon.png",
       "price": "$65.00",
-      "tag": "Latest"
+      "tag": "Latest",
+      "id": "plant6"
     },
     {
       "image": "pronia-project/assets/p7.jpeg",
@@ -68,7 +74,8 @@
       "icon": "pronia-project/assets/icons8-shopping-cart-64.png",
       "wishlist": "pronia-project/assets/heart-icon.png",
       "price": "$67.45",
-      "tag": "Bestseller"
+      "tag": "Bestseller",
+      "id": "plant7"
     },
     {
       "image": "pronia-project/assets/p8.jpeg",
@@ -78,7 +85,8 @@
       "icon": "pronia-project/assets/icons8-shopping-cart-64.png",
       "wishlist": "pronia-project/assets/heart-icon.png",
       "price": "$20.45",
-      "tag": "Latest"
+      "tag": "Latest",
+      "id": "plant8"
     }
   ]
 }

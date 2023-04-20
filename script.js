@@ -11,8 +11,12 @@ import {
 
 // the reference to the database app
 const database = getDatabase(app);
+
 // reference to the products in our database
 const productRef = ref(database, "/inventory");
+
+//create a ref to the cartCount in the database
+const cartCountRef = ref(database, "/cartCount");
 
 // global variables
 const productDivContainer = document.querySelector("#product-items-container");
@@ -75,75 +79,35 @@ productDivContainer.addEventListener("click", (event) => {
   if (event.target.className === "shopping-cart-button-img");
   {
 
-    //select the value of the cart count 
-      get(cartCountRef).then((snapshot) => {
-      console.log(snapshot.val());
-    })
-    //select the id of each item 
-    //addToCart(event.target.parentElement.parentElement.id);
+    addToCart(event.target.parentElement.parentElement.id)
+    
   }
-
+  
 });
 
-// this function handles adding items to our cart section it will be called when the user clicks on the add to cart button
-// on click, grab the info from the item, create a new object and push that to a location in firebase and increase item count in innerHTML
-const addToCart = (selectedProduct) => {
-  console.log(selectedProduct);
-  //create a reference to the specific product in the database
-};
+const addToCart = ((selectedItem)=>{ 
+  console.log(selectedItem);
+  const selectedProductItem = ref(database, `/inventory/${selectedItem}`);
 
-//create a ref to the cartCount in the database
+  //now we need to get the data stored at that specific location 
+    get(selectedProductItem).then((snapshot) => {
+    const productData = snapshot.val();
+    console.log(snapshot.val());
+    const CartItem = {
+      alt: productData.alt,
+      imgUrl: productData.image,
+      id: productData.id,
+    };
+    push(cartCountRef, CartItem);
+    
+  })
+})
 
-const cartCountRef = ref(database, "/cartCount");
+//display the number of item in the cart in the notifications section 
+onValue(cartCountRef, (data)=> { 
+  const itemCount = data.val();
+  const cartCountNotificationElement = document.querySelector('.cart-counter')
+  console.log(itemCount);
+  cartCountNotificationElement.textContent = Object.keys(itemCount).length;
 
-
-// // Select the form elemet on the page and allow the browser to listen for an event (submit) then perform the following activities
-// // Error Handling: Make sure the user has filled in all the fields before they are allowed to submit
-// // If they click submit without filling all the fiels show an error message
-// //Prevent the forms defualt of refreshing when the submit button is clicked/submitted
-// // Save the inputs as variabes (inputs being what they write in the field)
-// //** When the user submits, output a message on the form that confirms their submission and the button should change and allow them to submit another set of information "post again"
-
-// const form = document.querySelector(`form`);
-// const firstName = document.querySelector(`#first_name`);
-// //const lastName = document.querySelector(`#last_name`);
-// //const phoneNumber = document.querySelector(`#phone_number`);
-// //const email = document.querySelector(`#email_address`);
-// //const userMessage = document.querySelector(`#user_message`);
-
-// form.addEventListener(`submit`, function (e) {
-//   e.preventDefault();
-//   formValidation();
-// });
-
-// const setError = function (element, message) {
-//   const item1 = element.parentElement;
-//   const errorDisplay = item1.querySelector(`.error_message`);
-//   errorDisplay.innerHTML = message;
-
-//   item1.classList.add(`error_message`);
-//   item1.classList.remove(`sucess_message`);
-// };
-
-// const setSucess = function (element) {
-//   const item1 = element.parentElement;
-//   const errorDisplay = item1.querySelector(`.error_message`);
-//   errorDisplay.innerHTML = ``;
-
-//   item1.classList.add(`sucess_message`);
-//   item1.classList.remove(`error_message`);
-// };
-
-// const formValidation = function () {
-//   const firstNameValue = firstName.value.trim();
-//   //const lastNameValue = lastName.value.trim();
-//   //const phoneNumberValue = phoneNumber.value.trim();
-//   //const emailValue = phoneNumber.value.trim();
-//   // const userMessageValue = userMessage.value.tirm();
-
-//   if (firstNameValue === ``) {
-//     setError(firstName, `space cannot be blank`);
-//   } else {
-//     setSucess(firstName);
-//   }
-// };
+})
