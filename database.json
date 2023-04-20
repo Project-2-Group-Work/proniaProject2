@@ -1,60 +1,82 @@
 {
-  "inventory": [
-    {
-      "image": "assets/p2.jpeg",
-      "name": "American Marigold",
-      "icon": "assets/icons8-shopping-cart-64.png",
-      "wishlist": "assets/heart-icon.png",
-      "price": "$23.45"
-    },
-    {
-      "image": "assets/p1.jpeg",
-      "name": "Black Eyed Susan",
-      "icon": "assets/icons8-shopping-cart-64.png",
-      "wishlist": "assets/heart-icon.png",
-      "price": "$25.45"
-    },
-    {
-      "image": "assets/p3.jpeg",
-      "name": "Bleeding Heart",
-      "icon": "/assets/icons8-shopping-cart-64.png",
-      "wishlist": "assets/heart-icon.png",
-      "price": "$30.45"
-    },
-    {
-      "image": "assets/p4.jpeg",
-      "name": "Bloody Cranesbill",
-      "icon": "assets/icons8-shopping-cart-64.png",
-      "wishlist": "assets/heart-icon.png",
-      "price": "$45.00"
-    },
-    {
-      "image": "assets/p5.jpeg",
-      "name": "Butterfly Weed",
-      "icon": "assets/icons8-shopping-cart-64.png",
-      "wishlist": "assets/heart-icon.png",
-      "price": "$50.45"
-    },
-    {
-      "image": "assets/p6.jpeg",
-      "name": "Common Yarrow",
-      "icon": "assets/icons8-shopping-cart-64.png",
-      "wishlist": "assets/heart-icon.png",
-      "price": "$65.00"
-    },
-    {
-      "image": "assets/p7.jpeg",
-      "name": "Doublefile Vibranium",
-      "icon": "assets/icons8-shopping-cart-64.png",
-      "wishlist": "assets/heart-icon.png",
-      "price": "$67.45"
-    },
-    {
-      "image": "assets/p8.jpeg",
-      "name": "Feather Reed Grass",
-      "icon": "assets/icons8-shopping-cart-64.png",
-      "wishlist": "assets/heart-icon.png",
-      "price": "$20.45"
-    }
-  ]
+  "plant1": {
+    "alt": "small plant with small leaves in brown bowl",
+    "icon": "pronia-project/assets/icons8-shopping-cart-64.png",
+    "iconAlt": "add to cart button",
+    "image": "pronia-project/assets/p2.jpeg",
+    "name": "American Marigold",
+    "price": "$23.45",
+    "tag": "Featured",
+    "wishlist": "pronia-project/assets/heart-icon.png"
+  },
+  "plant2": {
+    "alt": "small plant with medium leaves in black bowl",
+    "icon": "pronia-project/assets/icons8-shopping-cart-64.png",
+    "iconAlt": "add to cart button",
+    "image": "pronia-project/assets/p1.jpeg",
+    "name": "Black Eyed Susan",
+    "price": "$25.45",
+    "tag": "Bestseller",
+    "wishlist": "pronia-project/assets/heart-icon.png"
+  },
+  "plant3": {
+    "alt": "green and white cactus in white bowl",
+    "icon": "pronia-project/assets/icons8-shopping-cart-64.png",
+    "iconAlt": "add to cart button",
+    "image": "pronia-project/assets/p3.jpeg",
+    "name": "Bleeding Heart",
+    "price": "$30.45",
+    "tag": "Featured",
+    "wishlist": "pronia-project/assets/heart-icon.png"
+  },
+  "plant4": {
+    "alt": "small plant with medium leaves in white bowl",
+    "icon": "pronia-project/assets/icons8-shopping-cart-64.png",
+    "iconAlt": "add to cart button",
+    "image": "pronia-project/assets/p4.jpeg",
+    "name": "Bloody Cranesbill",
+    "price": "$45.00",
+    "tag": "Bestseller",
+    "wishlist": "pronia-project/assets/heart-icon.png"
+  },
+  "plant5": {
+    "alt": "small plant with long thin leaves in white bowl",
+    "icon": "pronia-project/assets/icons8-shopping-cart-64.png",
+    "iconAlt": "add to cart button",
+    "image": "pronia-project/assets/p5.jpeg",
+    "name": "Butterfly Weed",
+    "price": "$50.45",
+    "tag": "Featured",
+    "wishlist": "pronia-project/assets/heart-icon.png"
+  },
+  "plant6": {
+    "alt": "medium plant with big thin leaves in white bowl",
+    "icon": "pronia-project/assets/icons8-shopping-cart-64.png",
+    "iconAlt": "add to cart button",
+    "image": "pronia-project/assets/p6.jpeg",
+    "name": "Common Yarrow",
+    "price": "$65.00",
+    "tag": "Latest",
+    "wishlist": "pronia-project/assets/heart-icon.png"
+  },
+  "plant7": {
+    "alt": "medium plant with big leaves in white bowl",
+    "icon": "pronia-project/assets/icons8-shopping-cart-64.png",
+    "iconAlt": "add to cart button",
+    "image": "pronia-project/assets/p7.jpeg",
+    "name": "Doublefile Vibranium",
+    "price": "$67.45",
+    "tag": "Bestseller",
+    "wishlist": "pronia-project/assets/heart-icon.png"
+  },
+  "plant8": {
+    "alt": "green and yellow cactus in gold bowl",
+    "icon": "pronia-project/assets/icons8-shopping-cart-64.png",
+    "iconAlt": "add to cart button",
+    "image": "pronia-project/assets/p8.jpeg",
+    "name": "Feather Reed Grass",
+    "price": "$20.45",
+    "tag": "Latest",
+    "wishlist": "pronia-project/assets/heart-icon.png"
+  }
 }

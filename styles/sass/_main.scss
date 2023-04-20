@@ -71,30 +71,27 @@
   display: flex;
   justify-content: center;
 }
-.featured {
-  border: #abd373 dashed 1px;
-  padding: 10px 15px;
-  text-align: center;
-  border-radius: 5px;
-  margin: 0px 10px;
-  a {
-    text-decoration: none;
-    color: v.$button-color;
-  }
-}
 
-.bestseller,
-.latest {
+.filter {
   border: #c0c0c0 solid 1px;
   padding: 10px 15px;
   text-align: center;
   border-radius: 5px;
   margin: 0px 10px;
-  a {
-    text-decoration: none;
-    color: black;
-  }
+  color: black;
+  font-size: 0.8rem;
+  background-color: white;
+  cursor: pointer;
 }
+
+// USED ESTHERS CODEALONG (NEW ONE)
+.filter:hover:not([disabled]),
+.filter:focus {
+  border: #abd373 dashed 1px;
+  background-color: white;
+  color: #abd373;
+}
+
 .product-items {
   .card {
     img {
@@ -382,6 +379,7 @@ input::placeholder {
 .success_message input {
   border-color: rgb(19, 128, 0);
 }
+
 
 @media (max-width: 972px) {
   .pot-collections {

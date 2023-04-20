@@ -1,20 +1,16 @@
 import app from "./firebaseConfig.js";
-import {
-  getDatabase,
-  ref,
-  set,
-} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
-const database = getDatabase(app);
-const dbRef = ref(database);
-
-const addToDatabase = (key, value) => {
-  const customRef = ref(database, key);
-  set(customRef, value);
-};
+const myDatabase = getDatabase(app);
+const productRef = ref(myDatabase);
 
 
 
+
+
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Select the form elemet on the page and allow the browser to listen for an event (submit) then perform the following activities
 // Error Handling: Make sure the user has filled in all the fields before they are allowed to submit
