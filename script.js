@@ -26,6 +26,8 @@ onValue(productRef, (data) => {
   // use onValue method to listen for changes, grabbing the data and getting a snapshot of the data
   const productData = data.val();
 
+  // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
   for (let key in productData) {
     console.log(productData[key]);
     //creating the html to append on the page
@@ -44,5 +46,31 @@ onValue(productRef, (data) => {
     const buttonImgAlt = productData[key].iconAlt;
     const productName = productData[key].name;
     const productPrice = productData[key].price;
+
+    // create new html elements
+    const divItem = document.createElement("div");
+    divItem.id = key;
+    const plantImg = document.createElement("img");
+    plantImg.src = productImgUrl;
+    plantImg.alt = productImgAlt;
+
+    const buttonItem = document.createElement("button");
+    buttonItem.className = "add-to-cart-";
+
+    const buttonImg = document.createElement("img");
+    buttonImg.className = "shopping-cart-button-img";
+    buttonImg.src = buttonImgUrl;
+    buttonImg.alt = buttonImgAlt;
+
+    const paraTitleItem = document.createElement("p");
+    paraTitleItem.innerHTML = productName;
+    const paraSubTitleItem = document.createElement("p");
+    paraSubTitleItem.className = "prices";
+    paraSubTitleItem.innerHTML = productPrice;
+    //appending the plant image, paragraphs and add to cart button to oue divItem
+    divItem.append(plantImg, buttonItem, paraTitleItem, paraSubTitleItem);
+    buttonItem.append(buttonImg);
+    //appending our div item to the div item with an id of product-items-container
+    document.querySelector("#product-items-container").append(divItem);
   }
 });
