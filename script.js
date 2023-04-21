@@ -1,16 +1,12 @@
 //
 import app from "./firebaseConfig.js";
-import {
-  getDatabase,
-  ref,
-  set,
-  push,
-  onValue,
-  get,
-} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+import {getDatabase, ref, push, onValue, get} 
+from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 // the reference to the database app
 const database = getDatabase(app);
+
+
 
 // reference to the products in our database
 const productRef = ref(database, "/inventory");
@@ -18,18 +14,31 @@ const productRef = ref(database, "/inventory");
 //create a ref to the cartCount in the database
 const cartCountRef = ref(database, "/cartCount");
 
+
 // global variables
+// variable called firebaseData to pass along when needed
+let firebaseData;
+
+// variable productDivContainer to grab the DIV element to manipulate
 const productDivContainer = document.querySelector("#product-items-container");
+// add a class to the div container to style it. 
+productDivContainer.classList.add("product-items");
 
-// displaying our product data on the page emitted from firebase on the page
+
+// use onValue method to listen for changes, grabbing the data and getting a snapshot of the data
 onValue(productRef, (data) => {
-  // use onValue method to listen for changes, grabbing the data and getting a snapshot of the data
-  const productData = data.val();
+  // get the value from the database and attach it to a variable called firebaseData [array] 
+  firebaseData = data.val();
+// call the displayItems function and pass along the firebaseData [array]
+  displayItems(firebaseData);
 
-  // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+});
+// create a function to display items on page instead of the onValue, to play with the scope
+const displayItems = (productData) =>{
+  // clean the container where all the list will be so that when you filter the array it wont keep adding items to the existing list
+  productDivContainer.innerHTML="";
   for (let key in productData) {
-    console.log(productData[key]);
+    // console.log(productData[key]);
     //creating the html to append on the page
     /* <div id = plant1>
       <img src= url alt ='' />
@@ -65,12 +74,36 @@ onValue(productRef, (data) => {
     const paraTitleItem = document.createElement("p");
     paraTitleItem.innerHTML = productName;
     const paraSubTitleItem = document.createElement("p");
+    //add a class name to the p element
     paraSubTitleItem.className = "prices";
     paraSubTitleItem.innerHTML = productPrice;
-    //appending the plant image, paragraphs and add to cart button to oue divItem
+    //appending the plant image, paragraphs and add to cart button to the divItem
     divItem.append(plantImg, buttonItem, paraTitleItem, paraSubTitleItem);
     buttonItem.append(buttonImg);
     //appending our div item to the div item with an id of product-items-container
     document.querySelector("#product-items-container").append(divItem);
+
   }
-});
+
+}
+
+// CODE FOR FILTERING AND THEN DISPLAYING ITEMS ON THE PAGE
+
+
+// --------------------------------------------------------------------------------------------------------------------
+// CODE FOR OTHER MVP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
