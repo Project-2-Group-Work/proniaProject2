@@ -103,11 +103,34 @@ const filterItems = () => {
 // call the filterItems function
 filterItems();
 
+// create the filterArray function
+// this function already has the value for this.id that it can pass to commit the function with that value. 
 const filterArray = (state) => {
+  // create a variable called data and clone the existing array from firebaseData to use when filtering
+  let data = [...firebaseData];
+  // create if else statements that have the condition when state === "id" is true , do this bunch of code....
+  if (state==="featured"){
+    // filter the array from the database to ONLY include the objects with the tag=Featured
+    let featuredItems = data.filter(newArray => newArray.tag === "Featured");
+     // call the function displayItems and pass the param latestItems, so that it will remake the list and append the items onto the page.
+    displayItems(featuredItems);
+  }
+  else if (state==="bestseller"){
+    // filter the array from the database to ONLY include the objects with the tag=Bestseller
+    let bestsellerItems = data.filter(newArray => newArray.tag === "Bestseller");
+     // call the function displayItems and pass the param latestItems, so that it will remake the list and append the items onto the page.
+    displayItems(bestsellerItems);
+  }
+  else if (state==="latest"){
+    // filter the array from the database to ONLY include the objects with the tag=Latest
+    let latestItems = data.filter(newArray => newArray.tag === "Latest");
+    // call the function displayItems and pass the param latestItems, so that it will remake the list and append the items onto the page.
+    displayItems(latestItems);
+  }
 }
 
 // --------------------------------------------------------------------------------------------------------------------
-// CODE FOR OTHER MVP
+// CODE FOR ADDING ITEMS TO CART MVP
 
 
 
