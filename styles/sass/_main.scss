@@ -425,7 +425,7 @@ input::placeholder {
   }
 }
 @media (max-width: 776px) {
-  .product-items {
+  #product-items-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0px 30px;
@@ -452,7 +452,7 @@ input::placeholder {
   }
 }
 @media (max-width: 397px) {
-  .product-items {
+  #product-items-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0px 30px;
@@ -464,7 +464,7 @@ input::placeholder {
     display: flex;
     flex-direction: column;
   }
-  .product-items {
+  #product-items-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0px 30px;
