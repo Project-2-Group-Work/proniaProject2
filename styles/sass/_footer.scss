@@ -74,18 +74,43 @@ hr {
   width: 850px;
   color: #abd373;
 }
+
 @media (max-width: 834px) {
   hr {
     width: 613px;
   }
 }
+
+@media (max-width: 428px) {
+  hr {
+    width: 400px;
+  }
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 30px 20px 10px 20px;
+    text-align: center;
+  }
+  .social-media-container {
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+  }
+}
+
 @media (max-width: 375px) {
   .footer-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     padding: 30px 20px 10px 20px;
+    text-align: center;
   }
   hr {
     width: 270px;
+  }
+  .social-media-container {
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
   }
 }

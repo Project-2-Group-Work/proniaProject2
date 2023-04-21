@@ -330,7 +330,7 @@ img {
   display: flex;
 }
 .top-bar .wrapper div p {
-  margin: 0px 10px;
+  margin: 10px 10px;
 }
 
 .navigation {
@@ -995,6 +995,10 @@ input::placeholder {
   }
 }
 @media (max-width: 834px) {
+  .pot-collection-1,
+  .pot-collection-4 {
+    width: 516px;
+  }
   .blog p {
     padding: 0px 50px;
   }
@@ -1020,7 +1024,7 @@ input::placeholder {
         -ms-flex-align: center;
             align-items: center;
     width: auto;
-    height: 350px;
+    height: 390px;
   }
   .blog-container .blog-post-1 p,
   .blog-container .blog-post-2 p,
@@ -1038,10 +1042,14 @@ input::placeholder {
   }
 }
 @media (max-width: 776px) {
-  .product-items {
+  #product-items-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0px 30px;
+  }
+  .pot-collection-1,
+  .pot-collection-4 {
+    width: 516px;
   }
 }
 @media (max-width: 653px) {
@@ -1064,6 +1072,13 @@ input::placeholder {
     width: 100%;
   }
 }
+@media (max-width: 428px) {
+  #product-items-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0px 30px;
+  }
+}
 @media (max-width: 495px) {
   .benefits .wrapper {
     display: -webkit-box;
@@ -1074,9 +1089,60 @@ input::placeholder {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .top-bar .wrapper div {
+    display: inline;
+  }
+  .navigation .wrapper .navigation-bar .pronia-logo {
+    width: auto;
+    height: 24px;
+    margin-bottom: 11px;
+  }
+  .banner .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .text-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .banner .text-container {
+    margin: 10px 0px;
+  }
+  .banner .wrapper .text-container .subheading-banner {
+    text-align: center;
+  }
+  .blog-container .blog-post-1,
+  .blog-container .blog-post-2,
+  .blog-container .blog-post-3 {
+    width: 300px;
+    height: 461px;
+  }
+  .blog-container .blog-post-1 img,
+  .blog-container .blog-post-2 img,
+  .blog-container .blog-post-3 img {
+    width: 60%;
+  }
 }
 @media (max-width: 397px) {
-  .product-items {
+  #product-items-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0px 30px;
@@ -1092,7 +1158,7 @@ input::placeholder {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .product-items {
+  #product-items-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0px 30px;
@@ -1133,7 +1199,7 @@ input::placeholder {
   .blog-container .blog-post-2,
   .blog-container .blog-post-3 {
     width: 300px;
-    height: 370px;
+    height: 461px;
   }
   .blog-container .blog-post-1 img,
   .blog-container .blog-post-2 img,
@@ -1236,13 +1302,43 @@ hr {
     width: 613px;
   }
 }
+@media (max-width: 428px) {
+  hr {
+    width: 400px;
+  }
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 30px 20px 10px 20px;
+    text-align: center;
+  }
+  .social-media-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0px auto;
+  }
+}
 @media (max-width: 375px) {
   .footer-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     padding: 30px 20px 10px 20px;
+    text-align: center;
   }
   hr {
     width: 270px;
+  }
+  .social-media-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0px auto;
   }
 }
