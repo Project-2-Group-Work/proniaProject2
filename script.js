@@ -1,19 +1,16 @@
 //
 import app from "./firebaseConfig.js";
-import {getDatabase, ref, push, onValue, get} 
-from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+import { getDatabase, ref, push, onValue, get }
+  from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 // the reference to the database app
 const database = getDatabase(app);
-
-
 
 // reference to the products in our database
 const productRef = ref(database, "/inventory");
 
 //create a ref to the cartCount in the database
 const cartCountRef = ref(database, "/cartCount");
-
 
 // global variables
 // variable called firebaseData to pass along when needed
@@ -24,19 +21,18 @@ const productDivContainer = document.querySelector("#product-items-container");
 // add a class to the div container to style it. 
 productDivContainer.classList.add("product-items");
 
-
 // use onValue method to listen for changes, grabbing the data and getting a snapshot of the data
 onValue(productRef, (data) => {
   // get the value from the database and attach it to a variable called firebaseData [array] 
   firebaseData = data.val();
-// call the displayItems function and pass along the firebaseData [array]
+  // call the displayItems function and pass along the firebaseData [array]
   displayItems(firebaseData);
 
 });
 // create a function to display items on page instead of the onValue, to play with the scope
-const displayItems = (productData) =>{
+const displayItems = (productData) => {
   // clean the container where all the list will be so that when you filter the array it wont keep adding items to the existing list
-  productDivContainer.innerHTML="";
+  productDivContainer.innerHTML = "";
   for (let key in productData) {
     // console.log(productData[key]);
     //creating the html to append on the page
@@ -89,6 +85,26 @@ const displayItems = (productData) =>{
 
 // CODE FOR FILTERING AND THEN DISPLAYING ITEMS ON THE PAGE
 
+// create a function that will listen to the click event and targets the div element
+const filterItems = () => {
+  // grab the button container for all buttons in that section using ID
+  const buttons = document.querySelectorAll(".filter");
+
+  // need to create a (for each) loop since we used querySelectorAll, to target all the buttons and add an event listener to EACH button
+  buttons.forEach((indivualButton) => {
+    indivualButton.addEventListener("click", function () {
+      // call back function that gets the id of the funtion and passes the parameter to a different (filterArray) function
+      filterArray(this.id);
+    });
+
+  });
+}
+
+// call the filterItems function
+filterItems();
+
+const filterArray = (state) => {
+}
 
 // --------------------------------------------------------------------------------------------------------------------
 // CODE FOR OTHER MVP
