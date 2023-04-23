@@ -573,6 +573,7 @@ img {
   margin: 30px auto;
   text-align: center;
   font-size: 1.5rem;
+  color: #4c4c4c;
 }
 
 .lines:before {
@@ -823,6 +824,7 @@ p {
 .blog-post .blog-heading {
   font-weight: 800;
   font-size: large;
+  color: #4c4c4c;
 }
 .blog-post p {
   text-align: left;
@@ -1226,6 +1228,23 @@ input::placeholder {
     height: 570px;
   }
 }
+@media (max-width: 500px) {
+  .contact-info-container .title {
+    padding: 10px 0;
+  }
+  .contact-info-container .email {
+    padding: 10px 0;
+  }
+  .contact-info-container .caption {
+    padding: 10px 0;
+  }
+  .contact-info-container .number {
+    padding: 10px 0;
+  }
+  .contact-info-container .address {
+    padding: 10px 0;
+  }
+}
 footer {
   background-image: url(../pronia-project/assets/footer.jpg);
   background-size: cover;
@@ -1249,7 +1268,6 @@ footer p {
 }
 .footer-container .contact {
   font-size: 1.1rem;
-  white-space: nowrap;
 }
 
 .footer-container p {
@@ -1317,12 +1335,15 @@ hr {
   color: #abd373;
 }
 
-@media (max-width: 429px) {
+@media (max-width: 640px) {
   .footer-container {
     display: grid;
     grid-template-columns: 1fr;
     padding: 30px 20px 10px 20px;
     text-align: center;
+  }
+  .section-1 {
+    width: 100%;
   }
   .social-media-container {
     -webkit-box-pack: center;

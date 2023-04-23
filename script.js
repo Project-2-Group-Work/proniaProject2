@@ -103,21 +103,17 @@ const filterItems = () => {
 productDivContainer.addEventListener("click", (event) => {
   if (event.target.className === "shopping-cart-button-img");
   {
-
     addToCart(event.target.parentElement.parentElement.id)
-    
   }
   
 });
 
 const addToCart = ((selectedItem)=>{ 
-  console.log(selectedItem);
   const selectedProductItem = ref(database, `/inventory/${selectedItem}`);
 
   //now we need to get the data stored at that specific location 
     get(selectedProductItem).then((snapshot) => {
     const productData = snapshot.val();
-    console.log(snapshot.val());
     const CartItem = {
       alt: productData.alt,
       imgUrl: productData.image,
@@ -132,7 +128,6 @@ const addToCart = ((selectedItem)=>{
 onValue(cartCountRef, (data)=> { 
   const itemCount = data.val();
   const cartCountNotificationElement = document.querySelector('.cart-counter')
-  console.log(itemCount);
   cartCountNotificationElement.textContent = Object.keys(itemCount).length;
 
 })
@@ -167,9 +162,6 @@ const filterArray = (state) => {
     displayItems(latestItems);
   }
 }
-
-// --------------------------------------------------------------------------------------------------------------------
-// CODE FOR ADDING ITEMS TO CART MVP
 
 
 
