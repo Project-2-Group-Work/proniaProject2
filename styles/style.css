@@ -338,7 +338,7 @@ img {
   margin: 10px 10px;
 }
 
-.topText {
+.top-text {
   font-size: 0.7rem;
 }
 
@@ -1286,7 +1286,7 @@ footer p {
   top: -20px;
 }
 
-.lineHeight {
+.line-height {
   line-height: 20px;
   position: relative;
   top: -20px;
@@ -1327,6 +1327,10 @@ footer p {
   text-align: center;
   padding: 0px 15px 15px 15px;
   font-size: 14px;
+  color: #abd373;
+}
+.copy-right a {
+  text-decoration: none;
   color: #abd373;
 }
 
