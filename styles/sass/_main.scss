@@ -4,9 +4,7 @@
   .wrapper {
     display: flex;
   }
-  .benefit-container1,
-  .benefit-container2,
-  .benefit-container3 {
+  .benefit-container {
     display: flex;
     flex-grow: 1;
     margin: 20px;
@@ -29,9 +27,7 @@
   justify-content: center;
   align-items: center;
 }
-.benefit-text1,
-.benefit-text2,
-.benefit-text3 {
+.benefit-text {
   p {
     margin: 5px 0px;
   }
@@ -46,6 +42,8 @@
   max-width: 350px;
   margin: 30px auto;
   text-align: center;
+  font-size: 1.5rem;
+  color: #4c4c4c;
 }
 .lines:before {
   content: " ";
@@ -71,57 +69,62 @@
   display: flex;
   justify-content: center;
 }
-.featured {
-  border: #abd373 dashed 1px;
-  padding: 10px 15px;
-  text-align: center;
-  border-radius: 5px;
-  margin: 0px 10px;
-  a {
-    text-decoration: none;
-    color: v.$button-color;
-  }
-}
 
-.bestseller,
-.latest {
+.filter {
   border: #c0c0c0 solid 1px;
   padding: 10px 15px;
   text-align: center;
   border-radius: 5px;
   margin: 0px 10px;
-  a {
-    text-decoration: none;
-    color: black;
+  color: black;
+  font-size: 0.8rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+// USED ESTHERS CODEALONG (NEW ONE)
+.filter:hover:not([disabled]),
+.filter:focus {
+  border: #abd373 dashed 1px;
+  background-color: white;
+  color: #abd373;
+}
+#product-items-container {
+  img {
+    height: 200px;
+    width: auto;
   }
 }
-.product-items {
-  .card {
-    img {
-      height: 200px;
-      width: auto;
-    }
-  }
+
+.add-to-cart- {
+  background-color: #f6f7fb;
+
+  padding: 0px;
+  margin: 0px;
+  border-radius: 0%;
+  cursor: pointer;
 }
-.product-items {
-  .card {
-    .add-to-cart- img {
-      height: 30px;
-      width: auto;
-      padding: 5px;
-      box-shadow: 0px 2px 7px #4c4c4c;
-    }
-    p {
-      margin: 10px 0px;
-      font-size: medium;
-    }
-  }
+.add-to-cart-:hover {
+  background-color: #d8d8d8;
+  transition: 0.2s;
 }
-.container-text {
+
+#product-items-container .add-to-cart- img {
+  height: 30px;
+  width: auto;
+  padding: 5px;
+  box-shadow: -1px 4px 9px #4c4c4c99;
+}
+p {
+  font-size: medium;
+  padding: 5px 0;
+}
+
+.prices {
   color: #abd373;
   font-size: medium;
 }
-.product-items {
+#product-items-container {
   display: grid;
   margin-top: 60px;
   gap: 1.5rem;
@@ -156,6 +159,7 @@
 
 .collection-buttons {
   padding: 10px 25px;
+  border-radius: 500px;
 }
 
 .pot-collection-1 {
@@ -220,6 +224,7 @@
     text-align: center;
     padding: 0px 200px;
     line-height: 20px;
+    font-size: 0.8rem;
   }
   img {
     display: block;
@@ -235,25 +240,19 @@
   align-items: center;
   margin: 40px;
 }
-.blog-post-1,
-.blog-post-2,
-.blog-post-3 {
+.blog-post {
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  align-items: start;
   background-color: #f6f7fb;
-  border-radius: 5px;
-  padding-bottom: 20px;
-  width: 260px;
-  height: 400px;
   margin: 10px;
+  padding: 25px 0;
   .blog-title {
     color: #abd373;
   }
   .blog-heading {
-    font-weight: bolder;
+    font-weight: 800;
     font-size: large;
+    color: #4c4c4c;
   }
   p {
     text-align: left;
@@ -383,28 +382,38 @@ input::placeholder {
   border-color: rgb(19, 128, 0);
 }
 
+
 @media (max-width: 972px) {
   .pot-collections {
     display: flex;
     justify-content: center;
   }
+  .benefits .wrapper {
+    flex-direction: column;
+  }
+  .benefit-text {
+    text-align: center;
+    width: 100%;
+  }
 }
 
 @media (max-width: 834px) {
+  .pot-collection-1, 
+  .pot-collection-4 { 
+    width: 516px;
+  }
   .blog p {
     padding: 0px 50px;
   }
   .blog-container {
     display: flex;
     flex-direction: column;
-    .blog-post-1,
-    .blog-post-2,
-    .blog-post-3 {
+    .blog-post {
       display: flex;
       justify-content: center;
       align-items: center;
       width: auto;
-      height: 350px;
+      height: 390px;
       p {
         text-align: center;
       }
@@ -419,10 +428,14 @@ input::placeholder {
   }
 }
 @media (max-width: 776px) {
-  .product-items {
+  #product-items-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0px 30px;
+  }
+  .pot-collection-1, 
+  .pot-collection-4 { 
+    width: 516px;
   }
 }
 @media (max-width: 653px) {
@@ -439,17 +452,64 @@ input::placeholder {
     }
   }
 }
+@media (max-width: 428px) {
+  #product-items-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0px 30px;
+  }
+}
 @media (max-width: 495px) {
   .benefits .wrapper {
     display: flex;
     flex-direction: column;
   }
+  .top-bar .wrapper div {
+    display: inline;
+  }
+  .navigation .wrapper .navigation-bar .pronia-logo {
+    width: auto;
+    height: 24px;
+    margin-bottom: 11px;
+  }
+  .banner .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .banner .text-container {
+    margin: 10px 0px;
+  }
+  .banner .wrapper .text-container .subheading-banner {
+    text-align: center;
+  }
+  .blog-container .blog-post {
+    width: 300px;
+    height: 461px;
+    img {
+      width: 60%;
+    }
+  }
 }
 @media (max-width: 397px) {
-  .product-items {
+  #product-items-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0px 30px;
+  }
+  .lines {
+    max-width: 300px;
+    font-size: 1.4rem;
+  }
+  .lines:after,
+  .lines:before {
+    width: 45px;
   }
 }
 
@@ -458,7 +518,7 @@ input::placeholder {
     display: flex;
     flex-direction: column;
   }
-  .product-items {
+  #product-items-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0px 30px;
@@ -483,11 +543,9 @@ input::placeholder {
       margin: 0px 40px 10px 40px;
     }
   }
-  .blog-container .blog-post-1,
-  .blog-container .blog-post-2,
-  .blog-container .blog-post-3 {
+  .blog-container .blog-post {
     width: 300px;
-    height: 370px;
+    height: 461px;
     img {
       width: 60%;
     }

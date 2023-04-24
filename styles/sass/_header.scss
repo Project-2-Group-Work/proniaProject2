@@ -4,18 +4,24 @@
   font-weight: normal;
   color: #fff;
   text-transform: capitalize;
-  padding: 10px;
   .wrapper {
     display: flex;
     justify-content: space-between;
+    text-transform: uppercase;
+    align-items: center;
     div {
       display: flex;
       p {
-        margin: 0px 10px;
+        margin: 10px 10px;
       }
     }
   }
 }
+
+.top-text {
+  font-size: 0.7rem;
+}
+
 .navigation {
   padding: 25px 0px;
   .wrapper {
@@ -32,13 +38,13 @@
         }
         a {
           text-decoration: none;
-          color: black;
+          color: #4c4c4c;
           margin: 0px 10px;
+          font-size: 0.8rem;
         }
       }
       .pronia-logo {
-        width: 71px;
-        height: 33px;
+        width: 85px;
 
         .cart-icon {
           height: 40px;
@@ -52,15 +58,31 @@
   .wrapper {
     .navigation-bar {
       .cart-icon {
-        height: 20px;
-        width: 20px;
+        height: 30px;
+        width: 25px;
       }
     }
   }
 }
 
+.navigation {
+  a {
+    text-decoration: none;
+    position: relative;
+  }
+  .cart-counter {
+    border: solid 2px #abd373;
+    background-color: #abd373;
+    top: -5px;
+    left: 15px;
+    border-radius: 50%;
+    color: white;
+    position: absolute;
+  }
+}
+
 .banner {
-  background-color: #f6e4d1;
+  background-color: #F8EEE5;
   .wrapper {
     display: flex;
     .text-container .image-container {
@@ -71,17 +93,24 @@
 
 .banner {
   .wrapper {
+    .image-container{
+      display: flex;
+      align-items: center;
+    }
+
     .text-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
       p {
         margin-bottom: 10px 0px;
+        color: #000;
       }
       .subheading-banner {
-        font-size: 2rem;
+        font-size: 3rem;
         font-weight: 300;
         text-align: left;
+        color: #000;
         margin: 10px 0px;
       }
     }
@@ -91,12 +120,12 @@
 .banner {
   .wrapper {
     .flower-pot {
-      height: 400px;
       width: 400px;
       padding: 40px 0px;
     }
     button {
       max-width: fit-content;
+      border-radius: 500px;
     }
   }
 }

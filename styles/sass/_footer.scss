@@ -2,6 +2,7 @@ footer {
   background-image: url(../pronia-project/assets/footer.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  
 }
 footer {
   p {
@@ -17,22 +18,33 @@ footer {
 
 .footer-container {
   .title {
-    font-size: 12px;
+    font-size: 1.1rem;
     margin-bottom: 10px;
+  }
+  .contact {
+    font-size: 1.1rem;
   }
 }
 .footer-container {
   p {
-    line-height: 20px;
+    font-weight: 400;
+    font-size: 0.8rem;
   }
 }
 .section-1 {
+  width: 200px;
   img {
     width: auto;
-    height: 20px;
+    height: 50px;
     margin-bottom: 10px;
-    padding-bottom: 0px;
+    position: relative;
+    top: -20px;
   }
+}
+.line-height {
+  line-height: 20px;
+  position: relative;
+  top: -20px;
 }
 .section-5 {
   .title {
@@ -44,7 +56,7 @@ footer {
 }
 .section-5 {
   .number {
-    font-size: 12px;
+    font-size: 1.3rem;
     margin-bottom: 10px;
   }
 }
@@ -68,24 +80,44 @@ footer {
     font-size: 14px;
     color: #abd373;
   }
+  a { 
+    text-decoration: none;
+    color: #abd373;
+  }
 }
 hr {
   margin: 40px auto 20px auto;
-  width: 850px;
   color: #abd373;
 }
-@media (max-width: 834px) {
-  hr {
-    width: 613px;
-  }
-}
-@media (max-width: 375px) {
+
+
+@media (max-width: 640px) {
   .footer-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     padding: 30px 20px 10px 20px;
+    text-align: center;
   }
-  hr {
-    width: 270px;
+  .section-1 {
+    width: 100%;
+  }
+  .social-media-container {
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+  }
+}
+
+@media (max-width: 376px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 30px 20px 10px 20px;
+    text-align: center;
+  }
+  .social-media-container {
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
   }
 }
