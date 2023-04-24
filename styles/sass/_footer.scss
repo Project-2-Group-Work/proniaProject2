@@ -23,7 +23,6 @@ footer {
   }
   .contact {
     font-size: 1.1rem;
-    white-space: nowrap;
   }
 }
 .footer-container {
@@ -42,7 +41,7 @@ footer {
     top: -20px;
   }
 }
-.lineHeight {
+.line-height {
   line-height: 20px;
   position: relative;
   top: -20px;
@@ -87,12 +86,16 @@ hr {
   color: #abd373;
 }
 
-@media (max-width: 429px) {
+
+@media (max-width: 640px) {
   .footer-container {
     display: grid;
     grid-template-columns: 1fr;
     padding: 30px 20px 10px 20px;
     text-align: center;
+  }
+  .section-1 {
+    width: 100%;
   }
   .social-media-container {
     justify-content: center;
