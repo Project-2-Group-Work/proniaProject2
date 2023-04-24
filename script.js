@@ -1,8 +1,15 @@
 //
+//
 import app from "./firebaseConfig.js";
-import { getDatabase, ref, push, onValue, get }
-  from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+import {
+  getDatabase,
+  ref,
+  push,
+  onValue,
+  get,
+} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
+// the reference to the database app
 // the reference to the database app
 const database = getDatabase(app);
 
@@ -18,16 +25,15 @@ let firebaseData;
 
 // variable productDivContainer to grab the DIV element to manipulate
 const productDivContainer = document.querySelector("#product-items-container");
-// add a class to the div container to style it. 
+// add a class to the div container to style it.
 productDivContainer.classList.add("product-items");
 
 // use onValue method to listen for changes, grabbing the data and getting a snapshot of the data
 onValue(productRef, (data) => {
-  // get the value from the database and attach it to a variable called firebaseData [array] 
+  // get the value from the database and attach it to a variable called firebaseData [array]
   firebaseData = data.val();
   // call the displayItems function and pass along the firebaseData [array]
   displayItems(firebaseData);
-
 });
 // create a function to display items on page instead of the onValue, to play with the scope
 const displayItems = (productData) => {
@@ -78,10 +84,8 @@ const displayItems = (productData) => {
     buttonItem.append(buttonImg);
     //appending our div item to the div item with an id of product-items-container
     document.querySelector("#product-items-container").append(divItem);
-
   }
-
-}
+};
 
 // CODE FOR FILTERING AND THEN DISPLAYING ITEMS ON THE PAGE
 
@@ -97,83 +101,65 @@ const filterItems = () => {
       filterArray(this.id);
     });
 
+    // code for adding items to the cart
+    // event listener for the div container containing the products which contains the buttons (* global variable used here)
+  });
+};
 
-// code for adding items to the cart
-// event listener for the div container containing the products which contains the buttons (* global variable used here)
-productDivContainer.addEventListener("click", (event) => {
-  if (event.target.className === "shopping-cart-button-img");
-  {
-    addToCart(event.target.parentElement.parentElement.id)
+// call the filterItems function
+filterItems();
+
+// create the filterArray function
+// this function already has the value for this.id that it can pass to commit the function with that value.
+const filterArray = (state) => {
+  // create a variable called data and clone the existing array from firebaseData to use when filtering
+  let data = [...firebaseData];
+  // create if else statements that have the condition when state === "id" is true , do this bunch of code....
+  if (state === "featured") {
+    // filter the array from the database to ONLY include the objects with the tag=Featured
+    let featuredItems = data.filter((newArray) => newArray.tag === "Featured");
+    // call the function displayItems and pass the param latestItems, so that it will remake the list and append the items onto the page.
+    displayItems(featuredItems);
+  } else if (state === "bestseller") {
+    // filter the array from the database to ONLY include the objects with the tag=Bestseller
+    let bestsellerItems = data.filter(
+      (newArray) => newArray.tag === "Bestseller"
+    );
+    // call the function displayItems and pass the param latestItems, so that it will remake the list and append the items onto the page.
+    displayItems(bestsellerItems);
+  } else if (state === "latest") {
+    // filter the array from the database to ONLY include the objects with the tag=Latest
+    let latestItems = data.filter((newArray) => newArray.tag === "Latest");
+    // call the function displayItems and pass the param latestItems, so that it will remake the list and append the items onto the page.
+    displayItems(latestItems);
   }
-  
+};
+
+productDivContainer.addEventListener("click", (event) => {
+  if (event.target.className === "shopping-cart-button-img") {
+    addToCart(event.target.parentElement.parentElement.id);
+  }
 });
 
-const addToCart = ((selectedItem)=>{ 
+const addToCart = (selectedItem) => {
   const selectedProductItem = ref(database, `/inventory/${selectedItem}`);
 
-  //now we need to get the data stored at that specific location 
-    get(selectedProductItem).then((snapshot) => {
+  //now we need to get the data stored at that specific location
+  get(selectedProductItem).then((snapshot) => {
     const productData = snapshot.val();
+    console.log(productData);
     const CartItem = {
       alt: productData.alt,
       imgUrl: productData.image,
       id: productData.id,
     };
     push(cartCountRef, CartItem);
-    
-  })
-})
-
-//display the number of item in the cart in the notifications section 
-onValue(cartCountRef, (data)=> { 
-  const itemCount = data.val();
-  const cartCountNotificationElement = document.querySelector('.cart-counter')
-  cartCountNotificationElement.textContent = Object.keys(itemCount).length;
-
-})
   });
-}
+};
 
-// call the filterItems function
-filterItems();
-
-// create the filterArray function
-// this function already has the value for this.id that it can pass to commit the function with that value. 
-const filterArray = (state) => {
-  // create a variable called data and clone the existing array from firebaseData to use when filtering
-  let data = [...firebaseData];
-  // create if else statements that have the condition when state === "id" is true , do this bunch of code....
-  if (state==="featured"){
-    // filter the array from the database to ONLY include the objects with the tag=Featured
-    let featuredItems = data.filter(newArray => newArray.tag === "Featured");
-     // call the function displayItems and pass the param latestItems, so that it will remake the list and append the items onto the page.
-    displayItems(featuredItems);
-  }
-  else if (state==="bestseller"){
-    // filter the array from the database to ONLY include the objects with the tag=Bestseller
-    let bestsellerItems = data.filter(newArray => newArray.tag === "Bestseller");
-     // call the function displayItems and pass the param latestItems, so that it will remake the list and append the items onto the page.
-    displayItems(bestsellerItems);
-  }
-  else if (state==="latest"){
-    // filter the array from the database to ONLY include the objects with the tag=Latest
-    let latestItems = data.filter(newArray => newArray.tag === "Latest");
-    // call the function displayItems and pass the param latestItems, so that it will remake the list and append the items onto the page.
-    displayItems(latestItems);
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//display the number of item in the cart in the notifications section
+onValue(cartCountRef, (data) => {
+  const itemCount = data.val();
+  const cartCountNotificationElement = document.querySelector(".cart-counter");
+  cartCountNotificationElement.textContent = Object.keys(itemCount).length;
+});
