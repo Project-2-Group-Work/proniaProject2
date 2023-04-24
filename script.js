@@ -1,4 +1,5 @@
 //
+//
 import app from "./firebaseConfig.js";
 import {
   getDatabase,
@@ -8,6 +9,7 @@ import {
   get,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
+// the reference to the database app
 // the reference to the database app
 const database = getDatabase(app);
 
